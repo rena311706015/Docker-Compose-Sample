@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Message</title>
+</head>
+<body>
+  <h1>Enter Message</h1>
+  <input id="msg" type="text" />
+  <button onclick="submit()">Send</button>
+  <script>
+    function submit() {
+      const content = document.getElementById("msg").value;
+        //   8000 為 backend 開放的 port
+      fetch("http://localhost:8000/submit", { 
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content })
+      }).then(r => alert("Sent!"));
+    }
+  </script>
+</body>
+</html>

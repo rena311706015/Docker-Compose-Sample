@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS messages (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  content VARCHAR(255),
+  timestamp DATETIME
+);
